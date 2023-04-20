@@ -64,4 +64,15 @@ $(document).ready(function(){
        } 
       });
   });
+
+  var pdfImage = document.getElementById("pdf-image");
+  var pdfViewer = document.getElementById("pdf-viewer");
+  
+  pdfImage.addEventListener("click", function() {
+    pdfViewer.style.display = "block";
+  });
+  
+  pdfViewer.addEventListener("click", function() {
+    pdfViewer.style.display = "none";
+  });
   
