@@ -115,7 +115,7 @@ header table {
     padding:0px 8%;
 }
 #about h1 {
-    font-size:40px;
+    font-size:30px;
     word-wrap:break-word;
 }
 #about table {
@@ -168,12 +168,12 @@ header table {
     background-size:cover;
     background-repeat:no-repeat;
 }
-#work {
+#projects {
     width:92vw;
     padding:6vh 4vw;
     font-weight:bold;
 }
-#work h1 {
+#projects h1 {
     padding:5px 0px;
     border-bottom:4px solid rgb(255, 44, 90);
     width:6%;
@@ -195,12 +195,12 @@ header table {
     transform: scale(1.1);
     cursor: pointer;
 }
-#bio {
+#resume {
     width:92vw;
     padding:6vh 4vw;
     font-weight:bold;
 }
-#bio h1 {
+#resume h1 {
     padding:5px 0px;
     border-bottom:4px solid rgb(255, 44, 90);
     width:8%;
@@ -364,10 +364,10 @@ button:focus {
     #contact form textarea {
         width:90%;
     }
-    #work h1 {
+    #projects h1 {
         width:19%;
     }
-    #bio h1 {
+    #resume h1 {
         width:25%;
     }
     #contact h1 {
