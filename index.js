@@ -77,42 +77,22 @@ $(document).ready(function(){
     pdfViewer.style.display = "none";
   });
 
-// Pagination for projects
-const projects = document.querySelectorAll('.project');
-const perPage = 2;
-let currentPage = 1;
-const totalPages = Math.ceil(projects.length / perPage);
+// Scroll for projects
+let projectContainer = document.querySelector(".project-container");
+let projectCards = document.querySelectorAll(".project-card");
+let scrollAmount = 0;
 
-function showPage(page) {
-  currentPage = page;
-  const start = (page - 1) * perPage;
-  const end = start + perPage;
-  projects.forEach((project, index) => {
-    if (index >= start && index < end) {
-      project.style.display = 'block';
-    } else {
-      project.style.display = 'none';
-    }
-  });
-  updatePagination();
-}
+projectContainer.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    projectContainer.scrollLeft += event.deltaY;
+    scrollAmount += event.deltaY;
 
-function updatePagination() {
-  const pagination = document.querySelector('.pagination');
-  pagination.innerHTML = '';
-  for (let i = 1; i <= totalPages; i++) {
-    const pageLink = document.createElement('a');
-    pageLink.href = '#';
-    pageLink.classList.add('page-link');
-    pageLink.textContent = i;
-    if (i === currentPage) {
-      pageLink.classList.add('active');
+    if (scrollAmount > 200) {
+        scrollAmount = 0;
+        projectContainer.scrollBy(400, 0);
+    } else if (scrollAmount < -200) {
+        scrollAmount = 0;
+        projectContainer.scrollBy(-400, 0);
     }
-    pageLink.addEventListener('click', () => {
-      showPage(i)});
-      pagination.appendChild(pageLink);
-    }
-  }
-
-  showPage(currentPage);
+});
   

@@ -315,45 +315,34 @@ button:focus {
     transform: scale(1.1);
 }
 
-.projects {
+.project-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
-.project {
-    width: calc(50% - 20px);
-    margin-bottom: 40px;
+
+.project-container::-webkit-scrollbar {
+    display: none;
 }
-.project img {
-    width: 100%;
-    height: auto;
+
+.project-card {
+    flex: 0 0 50%;
+    padding: 10px;
+}
+
+.project-card img {
     display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 }
-.project h3 {
-    margin: 10px 0;
-    font-size: 20px;
-}
-.project p {
-    font-size: 16px;
-}
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-.page-link {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-.page-link.active {
-    background-color: #333;
-    color: #fff;
+
+.project-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 @media (max-width: 1000px){
