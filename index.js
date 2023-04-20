@@ -65,6 +65,7 @@ $(document).ready(function(){
       });
   });
 
+// Resume Image
   var pdfImage = document.getElementById("pdf-image");
   var pdfViewer = document.getElementById("pdf-viewer");
   
@@ -75,4 +76,72 @@ $(document).ready(function(){
   pdfViewer.addEventListener("click", function() {
     pdfViewer.style.display = "none";
   });
+
+// Pagination for projects
+var projectsContainer = document.getElementById("projects-container");
+var paginationContainer = document.getElementById("pagination-container");
+
+var perPage = 6;
+var currentPage = 1;
+
+function displayProjects() {
+projectsContainer.innerHTML = "";
+var startIndex = (currentPage - 1) * perPage;
+var endIndex = startIndex + perPage;
+var projects = [
+    { name: "repo1", description: "Project 1 description goes here." },
+    { name: "repo2", description: "Project 2 description goes here." },
+    { name: "repo3", description: "Project 3 description goes here." },
+    { name: "repo4", description: "Project 4 description goes here." },
+    { name: "repo5", description: "Project 5 description goes here." },
+    { name: "repo6", description: "Project 6 description goes here." },
+    { name: "repo7", description: "Project 7 description goes here." },
+    { name: "repo8", description: "Project 8 description goes here." },
+    { name: "repo9", description: "Project 9 description goes here." }
+];
+var projectsToDisplay = projects.slice(startIndex, endIndex);
+for (var i = 0; i < projectsToDisplay.length; i++) {
+    var project = projectsToDisplay[i];
+    var projectHtml = "<div class='project'>";
+    projectHtml += "<h2>" + project.name + "</h2>";
+    projectHtml += "<p>" + project.description + "</p>";
+    projectHtml += "<div><script src='https://github.com/username/" + project.name + ".js'></script></div>";
+    projectHtml += "</div>";
+    projectsContainer.innerHTML += projectHtml;
+}
+}
+function displayPagination() {
+paginationContainer.innerHTML = "";
+var projects = [
+    { name: "repo1", description: "Project 1 description goes here." },
+    { name: "repo2", description: "Project 2 description goes here." },
+    { name: "repo3", description: "Project 3 description goes here." },
+    { name: "repo4", description: "Project 4 description goes here." },
+    { name: "repo5", description: "Project 5 description goes here." },
+    { name: "repo6", description: "Project 6 description goes here." },
+    { name: "repo7", description: "Project 7 description goes here." },
+    { name: "repo8", description: "Project 8 description goes here." },
+    { name: "repo9", description: "Project 9 description goes here." }
+];
+var totalPages = Math.ceil(projects.length / perPage);
+for (var i = 1; i <= totalPages; i++) {
+  var pageHtml = "<a href='#' class='page'";
+  if (i === currentPage) {
+    pageHtml += " class='active'";
+  }
+  pageHtml += ">" + i + "</a>";
+  paginationContainer.innerHTML += pageHtml;
+}
+var pages = document.getElementsByClassName("page");
+for (var i = 0; i < pages.length; i++) {
+  pages[i].addEventListener("click", function() {
+    currentPage = parseInt(this.innerHTML);
+    displayProjects();
+    displayPagination();
+  });
+}
+}
+
+displayProjects();
+displayPagination();
   

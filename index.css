@@ -316,6 +316,27 @@ button:focus {
     transform: scale(1.1);
 }
 
+.project {
+    margin-bottom: 20px;    
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.pagination a {
+    display: block;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+.pagination a.active {
+    background-color: black;
+    color: white;
+}
+
 @media (max-width: 1000px){
     #photos {
     columns:1;
