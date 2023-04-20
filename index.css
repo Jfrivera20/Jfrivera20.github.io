@@ -305,10 +305,20 @@ button:focus {
 
 #pdf-image {
     width:100%;
+    columns:3;
+    column-gap:4%;
+    z-index:1;
+    transition:0.4s ease-in-out;
+}
+#pdf-image img {
+    width:100%;
     height:auto;
     margin:4.5% 0px;
+    transition:0.4s ease-in-out;
+}
+#pdf-image img:hover {
     transform: scale(1.1);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 #pdf-viewer {
@@ -338,6 +348,17 @@ button:focus {
         transform: scale(1);
         cursor: pointer;
     }
+    #pdf-viewer  {
+    columns:1;
+    column-gap:0%;
+    }
+    #pdf-viewer  img {
+        margin:2% 0px;
+    }
+    #pdf-viewer  img:hover {
+        transform: scale(1);
+        cursor: pointer;
+    } 
     #rightImage {
         display:none;
     }
