@@ -78,70 +78,41 @@ $(document).ready(function(){
   });
 
 // Pagination for projects
-var projectsContainer = document.getElementById("projects-container");
-var paginationContainer = document.getElementById("pagination-container");
+const projects = document.querySelectorAll('.project');
+const perPage = 10;
+let currentPage = 1;
+const totalPages = Math.ceil(projects.length / perPage);
 
-var perPage = 6;
-var currentPage = 1;
-
-function displayProjects() {
-projectsContainer.innerHTML = "";
-var startIndex = (currentPage - 1) * perPage;
-var endIndex = startIndex + perPage;
-var projects = [
-    { name: "repo1", description: "Project 1 description goes here." },
-    { name: "repo2", description: "Project 2 description goes here." },
-    { name: "repo3", description: "Project 3 description goes here." },
-    { name: "repo4", description: "Project 4 description goes here." },
-    { name: "repo5", description: "Project 5 description goes here." },
-    { name: "repo6", description: "Project 6 description goes here." },
-    { name: "repo7", description: "Project 7 description goes here." },
-    { name: "repo8", description: "Project 8 description goes here." },
-    { name: "repo9", description: "Project 9 description goes here." }
-];
-var projectsToDisplay = projects.slice(startIndex, endIndex);
-for (var i = 0; i < projectsToDisplay.length; i++) {
-    var project = projectsToDisplay[i];
-    var projectHtml = "<div class='project'>";
-    projectHtml += "<h2>" + project.name + "</h2>";
-    projectHtml += "<p>" + project.description + "</p>";
-    projectHtml += "<div><script src='https://github.com/username/" + project.name + ".js'></script></div>";
-    projectHtml += "</div>";
-    projectsContainer.innerHTML += projectHtml;
-}
-}
-function displayPagination() {
-paginationContainer.innerHTML = "";
-var projects = [
-    { name: "repo1", description: "Project 1 description goes here." },
-    { name: "repo2", description: "Project 2 description goes here." },
-    { name: "repo3", description: "Project 3 description goes here." },
-    { name: "repo4", description: "Project 4 description goes here." },
-    { name: "repo5", description: "Project 5 description goes here." },
-    { name: "repo6", description: "Project 6 description goes here." },
-    { name: "repo7", description: "Project 7 description goes here." },
-    { name: "repo8", description: "Project 8 description goes here." },
-    { name: "repo9", description: "Project 9 description goes here." }
-];
-var totalPages = Math.ceil(projects.length / perPage);
-for (var i = 1; i <= totalPages; i++) {
-  var pageHtml = "<a href='#' class='page'";
-  if (i === currentPage) {
-    pageHtml += " class='active'";
-  }
-  pageHtml += ">" + i + "</a>";
-  paginationContainer.innerHTML += pageHtml;
-}
-var pages = document.getElementsByClassName("page");
-for (var i = 0; i < pages.length; i++) {
-  pages[i].addEventListener("click", function() {
-    currentPage = parseInt(this.innerHTML);
-    displayProjects();
-    displayPagination();
+function showPage(page) {
+  currentPage = page;
+  const start = (page - 1) * perPage;
+  const end = start + perPage;
+  projects.forEach((project, index) => {
+    if (index >= start && index < end) {
+      project.style.display = 'block';
+    } else {
+      project.style.display = 'none';
+    }
   });
-}
+  updatePagination();
 }
 
-displayProjects();
-displayPagination();
+function updatePagination() {
+  const pagination = document.querySelector('.pagination');
+  pagination.innerHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement('a');
+    pageLink.href = '#';
+    pageLink.classList.add('page-link');
+    pageLink.textContent = i;
+    if (i === currentPage) {
+      pageLink.classList.add('active');
+    }
+    pageLink.addEventListener('click', () => {
+      showPage(i)});
+      pagination.appendChild(pageLink);
+    }
+  }
+
+  showPage(currentPage);
   
