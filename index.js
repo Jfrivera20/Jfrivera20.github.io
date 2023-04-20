@@ -79,7 +79,7 @@ $(document).ready(function(){
 
 // Pagination for projects
 const projects = document.querySelectorAll('.project');
-const perPage = 10;
+const perPage = 2;
 let currentPage = 1;
 const totalPages = Math.ceil(projects.length / perPage);
 
