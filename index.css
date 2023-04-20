@@ -348,14 +348,14 @@ button:focus {
         transform: scale(1);
         cursor: pointer;
     }
-    #pdf-viewer  {
+    #pdf-image  {
     columns:1;
     column-gap:0%;
     }
-    #pdf-viewer  img {
+    #pdf-image  img {
         margin:2% 0px;
     }
-    #pdf-viewer  img:hover {
+    #pdf-image  img:hover {
         transform: scale(1);
         cursor: pointer;
     } 
