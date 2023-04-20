@@ -316,7 +316,12 @@ button:focus {
     margin:4.5% 0px;
     transition:0.4s ease-in-out;
 }
-#pdf-image img:hover {
+#pdf-image:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#pdf-container:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
