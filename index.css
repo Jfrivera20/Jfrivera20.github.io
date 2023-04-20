@@ -304,6 +304,10 @@ button:focus {
 }
 
 #pdf-image {
+    width:100%;
+    height:auto;
+    margin:4.5% 0px;
+    transform: scale(1.1);
     cursor: pointer;    
 }
 
