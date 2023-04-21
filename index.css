@@ -179,41 +179,36 @@ header table {
     width:8%;
 }
 
-.skills_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
 .skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width: calc(33.33% - 10px);
-}
-
-.skill__symbol {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 44, 90, 0.8);
-    color: #fff;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.skill__name {
-    font-size: 18px;
-    font-weight: bold;
+    display: inline-block;
+    margin: 5px;
     text-align: center;
-    text-transform: uppercase;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: rgba(255, 44, 90, 0.8);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.skill:hover {
+    background-color: #ffffff;
+    color: rgba(255, 44, 90, 0.8);
+    cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 	
 #experience {
