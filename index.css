@@ -215,6 +215,41 @@ header table {
     border-bottom:4px solid rgb(255, 44, 90);
     width:8%;
 }
+.card {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
 #projects {
     width:92vw;
     padding:6vh 4vw;
