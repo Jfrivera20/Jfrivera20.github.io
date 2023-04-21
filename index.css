@@ -345,6 +345,12 @@ button:focus {
     text-align: center;
 }
 
+.project-card p {
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 @media (max-width: 1000px){
     #photos {
     columns:1;
