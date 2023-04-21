@@ -355,7 +355,7 @@ button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4rem; /* Set the width of the icon container */
+    width: fit-content; /* Set the width of the icon container */
     height: 4rem; /* Set the height of the icon container */
     margin-left: auto; /* Move the icon to the right side */
 }
@@ -363,13 +363,6 @@ button:focus {
 .scroll-right-icon i {
     font-size: 2rem;
     color: rgb(255, 44, 90);
-}
-
-.scroll-right-icon p {
-    margin-top: 0;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-left: auto; 
 }
 
 @media (max-width: 1000px){
