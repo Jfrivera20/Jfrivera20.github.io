@@ -65,7 +65,7 @@ $(document).ready(function(){
       });
   });
 
-// Resume Image
+// Resume Image Manipulation
   var pdfImage = document.getElementById("pdf-image");
   var pdfViewer = document.getElementById("pdf-viewer");
   
