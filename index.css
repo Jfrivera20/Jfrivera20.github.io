@@ -365,11 +365,6 @@ button:focus {
     color: rgb(255, 44, 90);
 }
 
-.scroll-right-icon p {
-    font-size: 2rem;
-    color: rgb(255, 44, 90);
-}
-
 @media (max-width: 1000px){
     #photos {
     columns:1;
