@@ -95,23 +95,4 @@ projectContainer.addEventListener("wheel", (event) => {
         projectContainer.scrollBy(-400, 0);
     }
 });
-
-// Scroll for projects
-let experienceContainer = document.querySelector(".experience-container");
-let experienceCards = document.querySelectorAll(".experience-card");
-let scrollAmounts = 0;
-
-projectContainer.addEventListener("wheel", (event) => {
-    event.preventDefault();
-    experienceContainer.scrollLeft += event.deltaY;
-    scrollAmounts += event.deltaY;
-
-    if (scrollAmounts > 200) {
-        scrollAmounts = 0;
-        experienceContainer.scrollBy(400, 0);
-    } else if (scrollAmounts < -200) {
-        scrollAmounts = 0;
-        experienceContainer.scrollBy(-400, 0);
-    }
-});
   
