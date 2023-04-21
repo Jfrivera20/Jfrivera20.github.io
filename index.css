@@ -181,34 +181,16 @@ header table {
 
 .skill {
     display: inline-block;
-    margin: 5px;
-    text-align: center;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    font-size: 25px;
-    color: #ffffff;
-    background-color: rgba(255, 44, 90, 0.8);
-    transition: background-color 0.3s ease-in-out;
-}
-
-.skill:hover {
-    background-color: #ffffff;
-    color: rgba(255, 44, 90, 0.8);
-    cursor: pointer;
-}
-
-.column {
-    float: left;
-    width: 33.33%;
+    margin: 10px;
     padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 44, 90, 0.8);
+    color: white;
+    font-size: 24px;
+    transition: transform 2.2s ease-in-out;
 }
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.skill:hover {
+    transform: scale(1.2);
 }
 	
 #experience {
