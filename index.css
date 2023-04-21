@@ -351,6 +351,20 @@ button:focus {
     text-align: center;
 }
 
+.scroll-right-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem; /* Set the width of the icon container */
+    height: 4rem; /* Set the height of the icon container */
+    margin-left: auto; /* Move the icon to the right side */
+}
+
+.scroll-right-icon i {
+    font-size: 2rem;
+    color: rgb(255, 44, 90);
+}
+
 @media (max-width: 1000px){
     #photos {
     columns:1;
