@@ -373,6 +373,8 @@ header table {
 }
 #inner_div table{
     width:100%;
+    position: relative;
+    bottom: 120px;
 }
 #inner_div table tr td{
     font-weight:bold;
