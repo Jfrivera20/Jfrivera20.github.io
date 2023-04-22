@@ -230,6 +230,12 @@ header table {
     height: 300px;
 }
 
+.card text {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+
 .card:hover .overlay {
     opacity: 1;
 }
@@ -254,7 +260,7 @@ header table {
 
 /* Style for modal window */
 .modal {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 1;
     left: 0;
